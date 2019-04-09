@@ -2,6 +2,7 @@
  * 根据preState和action生成新的state
  */
 import {
+  SET_HOMEDATA,
   SET_NAVLIST,
   SET_FLASHSALE,
   SET_NEWITEM,
@@ -10,6 +11,8 @@ import {
 } from './action-types';
 function updateHomeData(preState = {}, action) {
   switch (action.type) {
+    case SET_HOMEDATA :
+      return Object.assign({}, preState, {homeData: action.data});
     case SET_NAVLIST :
       return Object.assign({}, preState, {navList: action.data});
     case SET_FLASHSALE :

@@ -1,6 +1,7 @@
 /**
  * 用于管理action常量的模块
  */
+export const SET_HOMEDATA = 'SET_HOMEDATA';
 
 export const SET_NAVLIST = 'SET_NAVLIST';
 export const SET_FLASHSALE = 'SET_FLASHSALE';

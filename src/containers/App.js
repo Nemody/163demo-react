@@ -1,22 +1,25 @@
 /**
- * 容器组建App
+ * 应用主组件的容器组件
  */
 import {connect} from 'react-redux';
 
-import {
-  setNavList
-} from '../redux/actions';
 import App from '../App';
-
+import {setHomeData} from '../redux/actions';
 const mapStateToProps = (state) => {
-  return {
-    navList: state.navList
+  if (state.homeData) {
+    return {
+      homeData: state.homeData
+    }
+  } else {
+    return {
+      homeData: {}
+    }
   }
 };
 const mapDispatchToProps = (dispatch) => {
   return {
-    setNavList: (navList) => {
-      dispatch(setNavList(navList));
+    setHomeData: (homeData) => {
+      dispatch(setHomeData(homeData));
     }
   }
 };

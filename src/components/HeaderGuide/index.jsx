@@ -1,24 +1,28 @@
 import React, {Component} from 'react';
-import {NavLink} from 'react-router-dom';
 import PropTypes from 'prop-types';
-import {reqHomeData} from '../../api';
+import BScroll from 'better-scroll';
 
-import '../../components/HeaderLogin/index.styl';
+import './index.styl';
 export default class HeaderLogin extends Component {
   static propTypes = {
-    navList: PropTypes.array.isRequired,
-    setNavList: PropTypes.func.isRequired
+    navList: PropTypes.array.isRequired
   };
 
-  componentWillMount () {
-    this.getHomeData();
+  componentDidMount () {
+    /* eslint-disable no-new */
+    new BScroll('.header-nav', {
+      click: true,
+      scrollX: true
+    })
   };
-  getHomeData = async () => {
-    const result = await reqHomeData();
-    if (result.code === 0) {
-      const navList = result.data.kingKongModule.kingKongList;
-      this.props.setNavList(navList);
-    }
+
+  toggleActive (e) {
+    console.log('点击了。。。');
+    /*
+    const navItems = document.querySelectorAll('.nav-item');
+    Array.prototype.slice.call(navItems).forEach(item => item.className = 'nav-item');
+    e.target.parentNode.className = 'nav-item active';
+    */
   };
 
   render() {
@@ -34,17 +38,17 @@ export default class HeaderLogin extends Component {
           <button>登录</button>
         </div>
         <div className="header-nav">
-          <ul className="header-nav-left">
+          <div className="header-nav-left">
             {
               navList.map((nav, index) => {
                 return (
-                  <li key={index}>
-                    <NavLink to="/">{nav.text}</NavLink>
-                  </li>
+                  <div className="nav-item" key={index} onClick={this.toggleActive}>
+                    <span>{nav.text}</span>
+                  </div>
                 )
               })
             }
-          </ul>
+          </div>
           <i className="iconfont icon-54 header-nav-arrow"></i>
         </div>
       </header>
