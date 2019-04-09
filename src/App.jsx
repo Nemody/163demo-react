@@ -9,7 +9,7 @@ import {reqHomeData} from './api';
 
 import Home from './pages/Home';
 import CategoryList from './containers/CategoryList/CategoryList';
-import Recommend from './pages/Recommend';
+import Recommend from './containers/Recommend/Recommend';
 import ShopCart from './pages/ShopCart';
 import Profile from './pages/Profile';
 import FooterGuide from './components/FooterGuide';
@@ -42,7 +42,7 @@ export default class App extends Component {
           <Route path='/recommend' component={Recommend}/>
           <Route path='/shopcart' component={ShopCart}/>
           <Route path='/profile' component={Profile}/>
-          <Route path='/categorylist/category/:id' component={Category}/>
+          <Route path='/categorylist/category' component={Category}/>
           <Redirect to='/home' />
         </Switch>
         <FooterGuide/>

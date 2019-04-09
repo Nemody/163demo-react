@@ -3,7 +3,12 @@
  */
 import {
   SET_HOMEDATA,
-  SET_CATEGORYLIST
+  SET_CATEGORYLIST,
+  SET_RECOMMEND_TABS,
+  SET_RECOMMEND_DATA,
+  SET_AUTO_RECOMMEND,
+  SET_ORDERSHOW_TOP,
+  SET_ORDERSHOW_RATINGS
 } from './action-types';
 function updateState(preState = {}, action) {
   switch (action.type) {
@@ -11,8 +16,19 @@ function updateState(preState = {}, action) {
       return Object.assign({}, preState, {homeData: action.data});
     case SET_CATEGORYLIST :
       return Object.assign({}, preState, {categoryList: action.data});
+    case SET_RECOMMEND_TABS :
+      return Object.assign({}, preState, {recommendTabs: action.data});
+    case SET_RECOMMEND_DATA :
+      return Object.assign({}, preState, {recommendData: action.data});
+    case SET_AUTO_RECOMMEND :
+      return Object.assign({}, preState, {autoRecommend: action.data});
+    case SET_ORDERSHOW_TOP :
+      return Object.assign({}, preState, {ordershowTop: action.data});
+    case SET_ORDERSHOW_RATINGS :
+      return Object.assign({}, preState, {ordershowRatings: action.data});
     default:
       return preState;
   }
 }
 export default updateState;
+

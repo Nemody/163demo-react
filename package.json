@@ -127,5 +127,6 @@
     "presets": [
       "react-app"
     ]
-  }
+  },
+  "proxy": "http://m.you.163.com"
 }
