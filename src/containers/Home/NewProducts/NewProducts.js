@@ -1,22 +1,23 @@
 /**
- * 首页人气推荐组件的容器组件
+ * 首页新品首发组件NewProducts的容器组件
  */
 import {connect} from 'react-redux';
 
-import Recommend from '../../pages/Home/components/Recommend/Recommend';
+import NewProducts from '../../../pages/Home/components/NewProducts/NewProducts';
 const mapStateToProps = (state) => {
   if (state.homeData) {
     return {
-      popularItem: state.homeData.popularItemList
+      newItem: state.homeData.newItemList
     }
   } else {
     return {
-      popularItem: []
+      newItem: []
     }
   }
 };
 
+
 export default connect(
   mapStateToProps,
   null
-)(Recommend);
+)(NewProducts);

@@ -6,7 +6,7 @@
  */
 import {connect} from 'react-redux';
 
-import Classify from '../../pages/Home/components/Classify/Classify';
+import Classify from '../../../pages/Home/components/Classify/Classify';
 const mapStateToProps = (state) => {
   if (state.homeData) {
     return {

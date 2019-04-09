@@ -3,28 +3,16 @@
  */
 import {
   SET_HOMEDATA,
-  SET_NAVLIST,
-  SET_FLASHSALE,
-  SET_NEWITEM,
-  SET_POPULARITEM,
-  SET_CLASSIFYLIST
+  SET_CATEGORYLIST
 } from './action-types';
-function updateHomeData(preState = {}, action) {
+function updateState(preState = {}, action) {
   switch (action.type) {
     case SET_HOMEDATA :
       return Object.assign({}, preState, {homeData: action.data});
-    case SET_NAVLIST :
-      return Object.assign({}, preState, {navList: action.data});
-    case SET_FLASHSALE :
-      return Object.assign({}, preState, {flashSale: action.data});
-    case SET_NEWITEM :
-      return Object.assign({}, preState, {newItem: action.data});
-    case SET_POPULARITEM :
-      return Object.assign({}, preState, {popularItem: action.data});
-    case SET_CLASSIFYLIST :
-      return Object.assign({}, preState, {classifyList: action.data});
+    case SET_CATEGORYLIST :
+      return Object.assign({}, preState, {categoryList: action.data});
     default:
       return preState;
   }
 }
-export default updateHomeData;
+export default updateState;

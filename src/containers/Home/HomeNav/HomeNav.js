@@ -3,7 +3,7 @@
  */
 import {connect} from 'react-redux';
 
-import HomeNav from '../../pages/Home/components/HomeNav/HomeNav';
+import HomeNav from '../../../pages/Home/components/HomeNav/HomeNav';
 const mapStateToProps = (state) => {
   if (state.navList) {
     return {

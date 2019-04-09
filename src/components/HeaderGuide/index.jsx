@@ -7,26 +7,29 @@ export default class HeaderLogin extends Component {
   static propTypes = {
     navList: PropTypes.array.isRequired
   };
-
+  state = {
+    currentIndex: 0
+  };
   componentDidMount () {
     /* eslint-disable no-new */
     new BScroll('.header-nav', {
       click: true,
       scrollX: true
+    });
+  };
+  toggleActive (index) {
+    this.setState({
+      currentIndex: index
     })
   };
-
-  toggleActive (e) {
-    console.log('点击了。。。');
-    /*
-    const navItems = document.querySelectorAll('.nav-item');
-    Array.prototype.slice.call(navItems).forEach(item => item.className = 'nav-item');
-    e.target.parentNode.className = 'nav-item active';
-    */
+  filterNavList = (navList) => {
+    const newArr = navList.filter((item, index) => (index + 1) % 5 !== 0);
+    return newArr;
   };
-
   render() {
     const {navList} =this.props;
+    const result = this.filterNavList(navList);
+    const {currentIndex} = this.state;
     return (
       <header className="header-container">
         <div className="header-search-login">
@@ -38,17 +41,23 @@ export default class HeaderLogin extends Component {
           <button>登录</button>
         </div>
         <div className="header-nav">
-          <div className="header-nav-left">
+          <ul className="header-nav-left">
+            <li
+              className={currentIndex === 0 ?'nav-item active' : 'nav-item'}
+              onClick={e => this.toggleActive(0)}
+            >
+              <span>推荐</span>
+            </li>
             {
-              navList.map((nav, index) => {
+              result.map((nav, index) => {
                 return (
-                  <div className="nav-item" key={index} onClick={this.toggleActive}>
+                  <li className={currentIndex === index + 1 ? 'nav-item active' : 'nav-item'} key={index} onClick={e => this.toggleActive(index + 1)}>
                     <span>{nav.text}</span>
-                  </div>
+                  </li>
                 )
               })
             }
-          </div>
+          </ul>
           <i className="iconfont icon-54 header-nav-arrow"></i>
         </div>
       </header>

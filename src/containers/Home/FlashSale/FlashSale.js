@@ -3,7 +3,7 @@
  */
 import {connect} from 'react-redux';
 
-import FlashSale from '../../pages/Home/components/FlashSale/FlashSale';
+import FlashSale from '../../../pages/Home/components/FlashSale/FlashSale';
 const mapStateToProps = (state) => {
   if (state.homeData) {
     return {

@@ -15,7 +15,9 @@ export default class FlashSale extends Component {
   componentWillMount() {
     this.timeDown();
   };
-
+  componentWillUnmount () {
+    clearInterval(this.intervalId);
+  };
   timeDown() {
     let newState = {};
     this.intervalId = setInterval(() => {

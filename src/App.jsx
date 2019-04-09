@@ -8,11 +8,12 @@ import PropTypes from 'prop-types';
 import {reqHomeData} from './api';
 
 import Home from './pages/Home';
-import CategoryList from './pages/CategoryList';
+import CategoryList from './containers/CategoryList/CategoryList';
 import Recommend from './pages/Recommend';
 import ShopCart from './pages/ShopCart';
 import Profile from './pages/Profile';
 import FooterGuide from './components/FooterGuide';
+import Category from './pages/CategoryList/Category/Category';
 
 import './assets/css/reset.css';
 export default class App extends Component {
@@ -41,6 +42,7 @@ export default class App extends Component {
           <Route path='/recommend' component={Recommend}/>
           <Route path='/shopcart' component={ShopCart}/>
           <Route path='/profile' component={Profile}/>
+          <Route path='/categorylist/category/:id' component={Category}/>
           <Redirect to='/home' />
         </Switch>
         <FooterGuide/>

@@ -11,7 +11,6 @@ export default class Classify extends Component {
     this.setUlWidth();
     this.initScroll();
   };
-
   setUlWidth () {
     const uls = document.querySelectorAll('.ul-node');
     let ulWidth;
@@ -50,14 +49,15 @@ export default class Classify extends Component {
                       <li key={index}>
                         <img src={item.listPicUrl} alt="商品图片" />
                         <div className="good-info">
-                          <span className="good-name">100%山羊绒纯色围巾</span>
-                          <span className="good-price">￥289</span>
+                          <span className="good-name">{item.name}</span>
+                          <span className="good-price">￥{item.counterPrice}</span>
                         </div>
                       </li>
                     ))
                   }
                 </ul>
               </div>
+              <div className="split"></div>
             </div>
           ))
         }

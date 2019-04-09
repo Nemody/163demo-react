@@ -4,14 +4,14 @@ import BScroll from 'better-scroll';
 import HeaderGuide from '../../containers/HeaderGuide/HeaderGuide';
 import Split from '../../components/Split';
 import HomeSwiper from './components/HomeSwiper/HomeSwiper';
-import HomeNav from '../../containers/HomeNav/HomeNav';
+import HomeNav from '../../containers/Home/HomeNav/HomeNav';
 import Gift from './components/Gift/Gift';
 import Manufacturer from './components/Manufacturer/Manufacturer';
 import Popular from './components/Popular/Popular';
-import Recommend from '../../containers/Recommend/Recommend';
-import FlashSale from '../../containers/FlashSale/FlashSale';
-import NewProducts from '../../containers/NewProducts/NewProducts';
-import Classify from '../../containers/Classify/Classify';
+import Recommend from '../../containers/Home/Recommend/Recommend';
+import FlashSale from '../../containers/Home/FlashSale/FlashSale';
+import NewProducts from '../../containers/Home/NewProducts/NewProducts';
+import Classify from '../../containers/Home/Classify/Classify';
 
 import './index.styl';
 export default class Home extends Component {
