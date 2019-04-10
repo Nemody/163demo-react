@@ -4,18 +4,19 @@ import PropTypes from 'prop-types';
 import BScroll from 'better-scroll';
 
 import {reqRecommendTabs} from '../../api';
-import RecoFind from './RecoFind/RecoFind';
+import RecoFind from '../../containers/Recommend/RecoFind/RecoFind';
 import RecoSelect from './RecoSelect/RecoSelect';
 
 import './index.styl';
 export default class Recommend extends Component {
   static propTypes = {
     recommendTabs: PropTypes.array.isRequired,
-    setRecoTabs: PropTypes.func.isRequired
+    recoIndex: PropTypes.number,
+    setRecoTabs: PropTypes.func.isRequired,
+    setRecoIndex: PropTypes.func.isRequired
   };
   state = {
-    isSelect: true,
-    currentIndex: 0
+    isSelect: true
   };
   componentWillMount () {
     this.getRecommendTabs();
@@ -56,13 +57,12 @@ export default class Recommend extends Component {
     })
   };
   isActive = (index) => {
-    this.setState({
-      currentIndex: index
-    })
+    this.props.setRecoIndex(index);
   };
     render(){
-      const {recommendTabs} = this.props;
-      const {isSelect, currentIndex} = this.state;
+      let {recommendTabs,recoIndex} = this.props;
+      recoIndex = (recoIndex >= 0 ? recoIndex: 0);
+      const {isSelect} = this.state;
         return (
             <div>
               <div className="slot-container">
@@ -82,7 +82,7 @@ export default class Recommend extends Component {
                 <ul className="ul-node">
                   {
                     recommendTabs.length && recommendTabs.map((tab, index) => (
-                      <li className={currentIndex === index ? 'active' : ''} key={tab.tabId} onClick={e => this.isActive(index)}>
+                      <li className={recoIndex === index ? 'active' : ''} key={tab.tabId} onClick={e => this.isActive(index)}>
                         <span>{tab.tabName}</span>
                       </li>
                     ))

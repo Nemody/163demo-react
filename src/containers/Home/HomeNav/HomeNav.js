@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 
 import HomeNav from '../../../pages/Home/components/HomeNav/HomeNav';
 const mapStateToProps = (state) => {
-  if (state.navList) {
+  if (state.homeData) {
     return {
       navList: state.homeData.kingKongModule.kingKongList
     }

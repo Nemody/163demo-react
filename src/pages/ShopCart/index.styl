@@ -1,0 +1,71 @@
+@import "../../assets/stylus/mixins.styl";
+.cart-container
+  position relative
+  height 1334px
+  background-color #f4f4f4
+  .cart-header
+    display flex
+    justify-content space-between
+    align-items center
+    height 88px
+    padding 0 30px
+    background-color #fff
+    .cart-text
+      font-size 36px
+      color #333333
+    .coupon-text
+      width 90px
+      height 88px
+      font-size 30px
+      color $red
+      line-height 90px
+      text-align center
+  .cart-main
+    .cart-list
+      display flex
+      justify-content space-between
+      align-items center
+      height 70px
+      padding 0 30px
+      .cart-item
+        display flex
+        align-items center
+        font-size 24px
+        color #666
+        i
+          width 10px
+          height 10px
+          font-size 10px
+          margin-right 10px
+
+    .cart-img
+      position absolute
+      top 50%
+      left 50%
+      transform translate(-50%, -50%)
+      width 248px
+      height 248px
+      background-image url("http://yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/noCart-d6193bd6e4.png")
+      background-repeat no-repeat
+      background-position center
+    .add-loginBtn
+      position absolute
+      left 50%
+      bottom 380px
+      transform translateX(-50%)
+      text-align center
+      .goto-add
+        display block
+        font-size 28px
+        color #999
+        margin-bottom 50px
+      .login-btn
+        width 480px
+        height 92px
+        margin 0 135px
+        text-align center
+        line-height 92px
+        background-color $red
+        span
+          font-size 30px
+          color #fff

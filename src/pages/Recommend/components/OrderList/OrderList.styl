@@ -1,0 +1,135 @@
+@import "../../../../assets/stylus/mixins.styl";
+.order-page
+  .show-orders
+    padding 70px 0 200px 0
+    .main-img
+      width 100%
+      height 380px
+      margin-bottom 20px
+    .order-top
+      display flex
+      flex-direction column
+      justify-content space-around
+      height 450px
+      padding 28px 0 0 40px
+      margin-bottom 20px
+      background-color #fff
+      .order-title
+        font-size 28px
+        color #7f7f7f
+        text-align center
+      .order-desc
+        display flex
+        justify-content center
+        font-size 32px
+        color #333
+        p
+          margin 0 10px
+        img
+          width 22px
+          height 18px
+          &:nth-of-type(1)
+            margin-top 10px
+          &:nth-of-type(2)
+            margin-top 20px
+      .order-goods
+        overflow hidden
+        ul
+          display flex
+          li
+            margin-right 20px
+            img
+              width 240px
+              height 240px
+              border-radius 10px
+    .user-ratings
+      padding-top 60px
+      background-color #fff
+      h1
+        font-size 32px
+        text-align center
+      .rating-switch
+        display flex
+        height 120px
+        padding 24px 20px 20px
+        justify-content space-around
+        .switch-btn
+          width 170px
+          height 120px
+          line-height 60px
+          color #333
+          padding 32px 0
+          text-align center
+          margin 0 24px
+          box-sizing border-box
+          span
+            display block
+            width 170px
+            height 60px
+            font-size 28px
+            border-radius 10px
+            background-color #f4f4f4
+      .rating-content
+        padding 0 5px
+        box-sizing border-box
+        display flex
+        justify-content space-around
+        .content-left, .content-right
+          width 45%
+          clearFix()
+          li
+            width 100%
+            margin-bottom 20px
+            border 1px solid #999
+            border-radius 20px
+            img
+              &.big-size
+                width 100%
+                height 460px
+                border-radius 20px 20px 0 0
+              &.middle-size
+                width 100%
+                height 345px
+                border-radius 20px 20px 0 0
+              &.small-size
+                width 100%
+                height 260px
+                border-radius 20px 20px 0 0
+            .rate-content
+              padding 0 10px
+              height 60px
+              line-height 60px
+            .user-info
+              display flex
+              align-items center
+              justify-content space-between
+              margin-bottom 10px
+              padding 0 10px
+              .avatar-name
+                display flex
+                align-items center
+                .user-avatar
+                  width 48px
+                  height 48px
+                  margin-right 10px
+                  border-radius 50%
+              .like-count
+                display flex
+                .give-like
+                  width 28px
+                  height 28px
+                  margin-left 10px
+            .title-sub
+              padding-top 10px
+              background-color #ffe1b2
+              .title
+                font-size 34px
+                font-weight bold
+                padding 0 20px
+                text-align center
+                margin-bottom 10px
+              .subTitle
+                font-weight 24px
+                color #333
+                padding 0 20px
+                text-align center

@@ -3,15 +3,20 @@
  */
 import {connect} from 'react-redux';
 import Recommend from '../../pages/Recommend';
-import {setRecommendTabs} from '../../redux/actions';
+import {
+  setRecommendTabs,
+  setRecoIndex
+} from '../../redux/actions';
 const mapStateToProps = (state) => {
   if (state.recommendTabs) {
     return {
-      recommendTabs: state.recommendTabs
+      recommendTabs: state.recommendTabs,
+      recoIndex: state.recoIndex
     }
   } else {
     return {
-      recommendTabs: []
+      recommendTabs: [],
+      recoIndex: 0
     }
   }
 
@@ -20,6 +25,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     setRecoTabs: (recommendTabs) => {
       dispatch(setRecommendTabs(recommendTabs))
+    },
+    setRecoIndex: (recoIndex) => {
+      dispatch(setRecoIndex(recoIndex))
     }
   }
 };

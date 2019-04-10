@@ -1,31 +1,28 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {
-  reqRecommendData,
-  reqAutoRecommendData
-} from '../../../api';
+import RecoList from '../../../containers/Recommend/RecoList/RecoList';
+import OrderList from '../../../containers/Recommend/OrderList/OrderList';
 
 export default class RecoFind extends Component {
   static propTypes = {
-    recommendData: PropTypes.array.isRequired,
-    autoRecommend: PropTypes.array.isRequired,
-    setRecoData: PropTypes.func.isRequired,
-    setAutoReco: PropTypes.func.isRequired
+    recoIndex: PropTypes.number.isRequired
   };
   state = {
-    isSelect: true
+    isSelect: true,
+    isShow: true
   };
-  componentWillMount () {
-    this.getRecommendTabs();
-  };
-  getRecommendTabs = async () => {
-    console.log(111)
-  };
+
     render(){
-        return (
-            <div>
-                RecoFind
-            </div>
+      const {recoIndex} = this.props;
+      return (
+        <section className="recoFind-container">
+          {
+            recoIndex === 4 ? null : <RecoList/>
+          }
+          {
+            recoIndex === 4 ? <OrderList /> : null
+          }
+        </section>
         )
     }
 }

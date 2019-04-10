@@ -14,7 +14,6 @@ export default class CategoryList extends Component {
   componentWillMount() {
     this.getCategoryList();
   };
-
   getCategoryList = async () => {
     const result = await reqCategoryList();
     if (result.code === 0) {

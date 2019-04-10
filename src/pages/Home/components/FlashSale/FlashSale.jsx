@@ -13,7 +13,7 @@ export default class FlashSale extends Component {
   };
 
   componentWillMount() {
-    this.timeDown();
+    // this.timeDown();
   };
   componentWillUnmount () {
     clearInterval(this.intervalId);
